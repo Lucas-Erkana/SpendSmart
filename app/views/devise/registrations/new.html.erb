@@ -1,29 +1,37 @@
-<h2>Sign up</h2>
+<div class="authentication sign-up">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <header>
+    <div class="login-header header">
+      <div>
+        <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), unauthenticated_root_path %>
+        
+      </div>
+      <p>REGISTER</p>
+      <div class="action">
+        <%= f.submit "Next" %>
+      </div>
+    </div>
+  </header>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="input-container">
+    <div class="profile">
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    </div>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true,  placeholder: "Full name", required: true  %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <%= f.label :email %>
+      <%= f.email_field :email,  autocomplete: "email", placeholder: "Email", required: true  %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "Password", minlength: 6, required: true %>
 
-<%= render "devise/shared/links" %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm password", required: true %>
+    </div>
+  <% end %>
+
+</div>
+
+<%# <%= render "devise/shared/links" %> 
