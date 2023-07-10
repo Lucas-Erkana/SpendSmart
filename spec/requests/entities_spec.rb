@@ -76,7 +76,6 @@ RSpec.describe '/entities', type: :request do
         end.to change(Entity, :count).by(0)
       end
 
-
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post entities_url, params: { entity: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
