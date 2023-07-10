@@ -1,15 +1,54 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Playball&display=swap');
+
+:root {
+    --primary-color: #434b64;
+    --secondary-color: #3778c2;
+    --tertiary-color: #5fb523;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+#splash_page {
+    height: 100vh;
+}
+
+#splash_page h1 {
+    font-family: 'Playball', cursive;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#splash_page .actions {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#splash_page .actions a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 95%;
+    padding: 18px 0;
+    font-weight: bolder;
+    color: gray;
+    font-size: 19px;
+}
+
+#splash_page .actions a:nth-child(odd) {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
