@@ -19,7 +19,12 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
+    
     @user = User.new(user_params)
+    @user.photo = params[:user][:photo]
+    puts "Photo URL: #{params[:user][:photo]}"
+    puts "User Photo: #{@user.photo}"
+    puts "User: #{@user}"
 
     respond_to do |format|
       if @user.save
@@ -31,6 +36,9 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  
+  
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
@@ -64,6 +72,6 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :photo)
   end
 end
