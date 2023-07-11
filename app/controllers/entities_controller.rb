@@ -12,6 +12,8 @@ class EntitiesController < ApplicationController
   # GET /entities/new
   def new
     @entity = Entity.new
+    @categories = Category.where(author_id: current_user.id) || []
+    @category_id = params[:category_id].to_i
   end
 
   # GET /entities/1/edit
@@ -19,11 +21,20 @@ class EntitiesController < ApplicationController
 
   # POST /entities or /entities.json
   def create
-    @entity = Entity.new(entity_params)
+    category_ids = entity_params[:category_ids].reject(&:empty?).map(&:to_i)
+    @entity = Entity.new(entity_params.except(:category_ids, :category_id))
+
+    category_ids.each do |id|
+      category = Category.find(id)
+      category.entities << @entity
+    end
 
     respond_to do |format|
       if @entity.save
-        format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully created.' }
+        format.html do
+          category_id = category_ids.first # Assuming the entity belongs to a single category
+          redirect_to user_category_path(current_user, category_id), notice: 'Transaction was successfully created.'
+        end
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,6 +75,6 @@ class EntitiesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def entity_params
-    params.require(:entity).permit(:name, :amount)
+    params.require(:entity).permit(:name, :amount, :category_id, category_ids: []).merge(author_id: current_user.id)
   end
 end

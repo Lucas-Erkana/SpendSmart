@@ -2,7 +2,7 @@
   <div class="nav-container header">
     <% case true %>
     <% when current_page?(authenticated_root_path) %>
-      <nav><i class="fa-solid fa-bars"></i></nav>
+      <nav id="mobile-nav-toggle"><i class="fa-solid fa-bars"></i></nav>
       <p>CATEGORY</p>
     <% when current_page?(new_user_category_path) %>
       <%= link_to raw('<i class="fa-solid fa-arrow-left-long"></i>'), authenticated_root_path %>
