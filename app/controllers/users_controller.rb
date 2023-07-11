@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    
     @user = User.new(user_params)
     @user.photo = params[:user][:photo]
     puts "Photo URL: #{params[:user][:photo]}"
@@ -36,9 +35,6 @@ class UsersController < ApplicationController
       end
     end
   end
-  
-  
-  
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
