@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #434b64;
+  --secondary-color: #3778c2;
+  --tertiary-color: #5fb523;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 9px;
+  height: 60px;
+  align-items: center;
+  font-size: 19px;
+}
+
+#categories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.btn a,
+.btn input {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 0;
+  border: 2px solid rgb(217, 217, 217);
+  color: rgb(239, 239, 239);
+  cursor: pointer;
+}
+
+.category-list .img-container a {
+  display: block;
+  width: 85px;
+  height: 85px;
+}
+
+.category-list .img-container a img {
+  width: 100%;
+  height: 100%;
+}
+
+.category-list .details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.category-list .details a {
+  text-decoration: none;
+  font-size: 24px;
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+
+.category-list .details .date {
+  font-size: 16px;
+}
+
+.category-list .amount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.category-list .amount button {
+  border: none;
+  color: #3778c2;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn {
+  text-align: center;
+  background-color: var(--tertiary-color);
+  padding: 17px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Category form section */
+
+.btn input {
+  background-color: inherit;
+}
+
+/* Category show page section */
+.category-transactions {
+  background-color: #fff;
+  height: 70vh;
+  position: relative;
+}
+
+h4.transactions-title {
+  text-align: center;
+  padding: 20px;
+  text-decoration: underline overline var(--secondary-color);
+}
+
+.empty-transaction {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 40%;
+}
+
+.category-transactions .transaction-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  font-size: 20px;
+}
+
+.transaction-details-container .transaction-details:nth-child(odd) {
+  background-color: rgb(239, 239, 239);
+}
+
+.transaction-details-container {
+  height: 80%;
+  overflow-y: scroll;
+}
