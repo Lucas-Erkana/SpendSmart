@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
+<div class="total">
+  <p>Total amount:</p>
+  <p>$<%= Category.total_amount(current_user.id) %></p>
 </div>
 
-<%= link_to "New category", new_category_path %>
+<% if @categories.any? %>
+  <div id="categories">
+    <% @categories.each do |category| %>
+      <ul><%= render category %></ul>
+    <% end %>
+  </div>
+<% end %>
+
+
+<div class="btn">
+  <%= link_to "New category", new_user_category_path(current_user) %>
+</div>
