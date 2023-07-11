@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
 
 <%= render @category %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
+<div class="category-transactions">
+<h4 class="transactions-title">Transactions</h4>
+  <% if @entities.empty? %>
+    <p class="empty-transaction">No transactions available.</p>
+  <% else %>
+      <div class="transaction-details-container">
+        <% @entities.each do |entity| %>
+          <% if can? :read,  entity%>
+            <div class="transaction-details">
+              <p><%= entity.name.capitalize%></p>
+              <p>$<%= entity.amount%></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+  <% end %>
+</div>
 
-  <%= button_to "Destroy this category", @category, method: :delete %>
+
+<div class="btn">
+  <%= link_to "Add transaction", new_user_entity_path(current_user) %>
 </div>
