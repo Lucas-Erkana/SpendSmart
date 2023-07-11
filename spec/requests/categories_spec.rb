@@ -5,7 +5,8 @@ RSpec.describe '/categories', type: :request do
 
   describe 'GET /new' do
     before do
-      @user = User.create(name: 'Lucas', email: 'lderkana21x@gmail.com', password: '123123', password_confirmation: '123123')
+      @user = User.create(name: 'Lucas', email: 'lderkana21x@gmail.com', password: '123123',
+                          password_confirmation: '123123')
       sign_in @user
       get authenticated_root_path
     end
