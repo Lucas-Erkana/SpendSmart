@@ -1,7 +1,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-  - [📖 TDD Project ](#-oop-school-library--)
+  - [📖 SpendSmart ](#-about-project-)
   - [🛠 Built With ](#-built-with-)
   - [Tech Stack ](#tech-stack-)
   - [Key Features](#key-features)
