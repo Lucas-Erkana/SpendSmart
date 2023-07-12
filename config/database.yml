@@ -18,4 +18,9 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: SpendSmart_production
+  host: localhost
+  port: 5432
+  username: postgres
+  password: Admin123
+
