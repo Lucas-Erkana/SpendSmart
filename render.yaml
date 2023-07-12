@@ -1,11 +1,11 @@
 databases:
   - name: spendsmart
-    databaseName: spendsmart
+    databaseName: spendsmart_30b0
     user: spendsmart_user
 
 services:
   - type: web
-    name: spendsmart
+    name: spend-smart
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
