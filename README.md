@@ -108,7 +108,8 @@ rails server
 - GitHub: [@Lucash2022](https://github.com/Lucash2022)
 - Twitter: [@Lucas_David_22](https://twitter.com/@Lucas_David_22)
 - LinkedIn: [Lucas Erkana](https://www.linkedin.com/in/lucas-erkana/)
-- Frontend Mentor - [@PLucash2022](https://www.frontendmentor.io/profile/Lucash2022)
+- Frontend Mentor - [@Lucash2022](https://www.frontendmentor.io/profile/Lucash2022)
+- Stack Overflow - [@lucas-erkana](https://stackoverflow.com/users/7663438/lucas-erkana)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
