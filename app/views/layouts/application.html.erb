@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SmartSaver</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "authentication", "mobile_nav", "category", "form", "page_header", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  
+  <% if user_signed_in? %>
+  <div id="mobile-nav-container">
+  <button id="close-mobile-nave"><i class="fa-solid fa-xmark"></i></button>
+    <!-- Mobile navigation menu -->
+<div class="profile-info-container">
+  <div class="profile-img">
+    <% if user_signed_in? && current_user.photo.present? %>
+      <%= image_tag current_user.photo, class: "avatar-img rounded-circle" %>
+    <% else %>
+      <i class="fa-solid fa-user"></i>
+    <% end %>
+  </div>
+  <p><%= current_user.name.split(' ').first %></p>
+</div>
+
+
+    <ul id="mobile-nav-menu">
+      <!-- Add your navigation links here -->
+      <li class="nav-link"><%= link_to  "Settings", '' %></li>
+      <li class="nav-link"><%= link_to "Sign Out", destroy_user_session_path,  data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to logout?' }, class: "nav-link" %></li>
+    </ul>
+
+    <!-- Overlay for closing the mobile navigation -->
+  </div>
+  <div id="mobile-nav-overlay"></div>
+    <%= render 'shared/header' %>
+    <p class="notice" id="notice"><%= notice %></p>
+    <p class="alert notice"><%= alert %></p>
+  <% end %>
+    <%= yield %>
+  </body>
+  <script>
+    function initMenue() {
+      setTimeout(function() {
+      let element = document.getElementById('notice');
+        element.style.display = 'none';
+      }, 3000);
+
+      // Get the mobile navigation elements
+      let mobileNavContainer = document.getElementById('mobile-nav-container');
+      let mobileNavToggle = document.getElementById('mobile-nav-toggle');
+      let mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+      let closeMobileNave = document.getElementById('close-mobile-nave');
+      let navLinks = document.querySelectorAll('.nav-link');
+
+      // Funtion to Toggle the mobile navigation 
+      const toggleMobileMenue = () => {
+        mobileNavContainer.classList.toggle('open');
+        mobileNavOverlay.classList.toggle('active')
+      }
+
+      navLinks.forEach(element => {
+        element.addEventListener('click', toggleMobileMenue)
+      });
+      
+      // Toggle the mobile navigation when the toggle button is clicked
+      mobileNavToggle.addEventListener('click', toggleMobileMenue);
+      closeMobileNave.addEventListener('click', toggleMobileMenue);
+      // Close the mobile navigation when the overlay is clicked
+      mobileNavOverlay.addEventListener('click', toggleMobileMenue);
+    }
+
+    initMenue()
+
+  </script>
+</html>

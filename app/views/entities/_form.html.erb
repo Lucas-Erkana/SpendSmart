@@ -1,0 +1,22 @@
+<%= form_with(model: entity, url: user_entities_path) do |form| %>
+  <div class="input-container">
+    <div class="field">
+      <%= form.text_field :name, required:true, placeholder: 'Name' %>
+    </div>
+
+    <div class="field">
+      <%= form.number_field :amount, step: "0.01", required:true, placeholder: 'Amount' %>
+    </div>
+  </div>
+
+  <h2 class="select-category-title">Select Categories</h2>
+
+  <div class="select-cont">
+    <%= form.select :category_ids, @categories.map { |category| [category.name, category.id] }, { include_blank: false }, { multiple: true, required: true } %>
+  </div>
+  <%= form.hidden_field :category_id, value: params[:category_id] %>
+
+  <div class="btn">
+    <%= form.submit 'Create Transaction' %>
+  </div>
+<% end %>

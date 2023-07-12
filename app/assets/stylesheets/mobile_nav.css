@@ -1,0 +1,133 @@
+
+/* Hide the mobile navigation menu by default */
+#mobile-nav-container {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Off-screen initially */
+  width: 70%; /* Adjust as per your preference */
+  height: 100vh;
+  background-color: #3778c2;
+  z-index: 100;
+  transition: left 0.3s ease;
+  color: #fff;
+  border-radius: 0 10px 10px 0;
+}
+
+/* Show the mobile navigation menu when open class is added to the container */
+#mobile-nav-container.open {
+  left: 0;
+}
+
+.profile-img i {
+  font-size: 50px;
+}
+
+#close-mobile-nave {
+  border: none;
+  background-color: inherit;
+  color: #434b64;
+  display: block;
+  width: 100%;
+  text-align: end;
+  padding: 20px  30px 20px 0;
+}
+
+#close-mobile-nave i {
+  font-size: 30px;
+  transition: all 0.3s ease;
+}
+
+#close-mobile-nave i:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 2px;
+  color: gray;
+}
+
+#mobile-nav-toggle,
+#close-mobile-nave i:hover {
+  cursor: pointer;
+}
+
+.profile-info-container {
+  margin-top: 30px;
+}
+
+.profile-info-container,
+.profile-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.avatar-img {
+  width: 200px; /* Adjust the width to your desired size */
+  height: 210px; /* Adjust the height to your desired size */
+}
+
+.rounded-circle {
+  border-radius: 50%; /* Make the image circular by setting border-radius to 50% */
+  overflow: hidden; /* Hide any content that exceeds the circular boundaries */
+}
+
+.profile-info-container p {
+  margin-top: 5px;
+  text-align: center;
+  width: 80%;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 30px;
+}
+
+/* Style the mobile navigation links */
+#mobile-nav-menu {
+  list-style-type: none;
+  padding-left: 5px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#mobile-nav-menu li {
+  margin: 10px;
+}
+
+#mobile-nav-menu li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+#mobile-nav-menu li a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transform: skew(10deg);
+}
+
+#mobile-nav-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  left: -100%;
+}
+
+#mobile-nav-overlay.active {
+  left: 0;
+}
+
+@media (min-width: 765px) {
+  #mobile-nav-container {
+    width: 250px;
+  }
+}

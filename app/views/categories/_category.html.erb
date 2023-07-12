@@ -1,0 +1,31 @@
+<li class="category-list">
+  <div class="img-container">
+    <%= link_to  user_category_path( current_user, category) do %>
+      <% def valid_image_url?(url) %>
+        <% url.present? && url =~ /\Ahttps?:\/\/\S+\z/ %>
+      <% end %>
+      <% if valid_image_url?(category.icon) %>
+        <%= image_tag category.icon, alt: 'My Image' %>
+      <% else %>
+        <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJcT7PQqrhP-fcTi2K3UTvx1CZMmLvFPvupUZivUCJMFDRsX4LxhTRuenl5VHpbhs7elI&usqp=CAU', alt: 'My Image' %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="details">
+    <p><%= link_to  category.name.capitalize, user_category_path( current_user, category) %></p>
+    <p class="date"><%=  category.created_at.strftime("%d %b %Y") %></p>
+  </div>
+  <div class="amount">
+    <p>$<%= category.entities.sum(:amount)%></p>
+    
+    <% if can? :destroy, category %>
+      <%= button_to user_category_path(current_user, category),
+        method: :delete,
+        data: { confirm: 'Are you sure you want to delete this category?' },
+        title: "Delete #{category.name.capitalize} category" do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+    <% end %>
+    
+  </div>
+</li>

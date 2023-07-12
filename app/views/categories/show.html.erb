@@ -1,0 +1,25 @@
+
+<%= render @category %>
+
+<div class="category-transactions">
+<h4 class="transactions-title">Transactions</h4>
+  <% if @entities.empty? %>
+    <p class="empty-transaction">No transactions available.</p>
+  <% else %>
+      <div class="transaction-details-container">
+        <% @entities.each do |entity| %>
+          <% if can? :read,  entity%>
+            <div class="transaction-details">
+              <p><%= entity.name.capitalize%></p>
+              <p>$<%= entity.amount%></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+
+
+<div class="btn">
+  <%= link_to "Add transaction", new_user_entity_path(current_user) %>
+</div>
