@@ -1,3 +1,7 @@
+<a name="readme-top"></a>
+
+<h1 align='center'> SpendSmart🤘 </h1>
+
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
@@ -68,7 +72,7 @@ Example commands:
 -  Clone this repository using GitBash or the command Terminal:
 
 ```sh
-git clone https://github.com/Lucash2022/SpendSmart.git
+git clone https://github.com/Lucas-Erkana/SpendSmart.git
 
  cd SpendSmart
 ```
@@ -104,10 +108,10 @@ rails server
 
 👤 **Lucas Erkana**
 
-- GitHub: [@Lucash2022](https://github.com/Lucash2022)
+- GitHub: [@Lucas-Erkana](https://github.com/Lucas-Erkana)
 - Twitter: [@Lucas_David_22](https://twitter.com/@Lucas_David_22)
 - LinkedIn: [Lucas Erkana](https://www.linkedin.com/in/lucas-erkana/)
-- Frontend Mentor - [@Lucash2022](https://www.frontendmentor.io/profile/Lucash2022)
+- Frontend Mentor - [@Lucas-Erkana](https://www.frontendmentor.io/profile/Lucas-Erkana)
 - Stack Overflow - [@lucas-erkana](https://stackoverflow.com/users/7663438/lucas-erkana)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -123,7 +127,7 @@ rails server
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Lucash2022/SpendSmart/issues).
+Feel free to check the [issues page](https://github.com/Lucas-Erkana/SpendSmart/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
