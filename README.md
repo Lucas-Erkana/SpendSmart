@@ -45,7 +45,8 @@ SpendSmart is a web-based budgeting application built using Ruby on Rails and Po
 
 ### 🚀 Live Demo <a name="live-demo"></a>
 
-<a href="https://spend-smart.onrender.com/" target="_blank">SpendSmart</a>
+Go live with [SpendSmart](https://www.spendsmart.shop/)
+
 ### 📽️ Video Presentation <a name="video"></a>
 
 [Video Presentation ](https://youtu.be/ZyaWn7ixb5o)
